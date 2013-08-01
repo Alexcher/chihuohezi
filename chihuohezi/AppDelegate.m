@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
@@ -22,8 +23,14 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    MainViewController *mvc = [[MainViewController alloc]init];
+    self.window.rootViewController = mvc;
+    [mvc release];
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
